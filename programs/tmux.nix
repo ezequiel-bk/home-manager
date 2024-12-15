@@ -3,12 +3,9 @@ let
     bind h split-window -h
     bind v split-window -v
     bind q kill-window
-    bind l list-windows
-    bind L list-sessions
+    bind w kill-pane
     bind Escape kill-session 
-    '';
-
-    sessions = ''
+    bind P split-window -h \; split-window -v 
     '';
 in
 {
@@ -17,6 +14,6 @@ in
         terminal = "tmux-256color";
 
         prefix = "C-space";
-        extraConfig = keybinds + sessions;
+        extraConfig = keybinds;
     };
 }

@@ -10,8 +10,11 @@
   home.homeDirectory = "/home/ezequiel_bk";
 
   home.stateVersion = "24.11"; # Please read the comment before changing.
+  home.packages = with pkgs; [
+    (nerdfonts.override { fonts = [ "Iosevka" ]; })
+  ];
 
-  home.packages = [];
+  fonts.fontconfig.enable = true;
 
   home.file = {};
 
@@ -20,3 +23,4 @@
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 }
+  
