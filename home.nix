@@ -1,10 +1,7 @@
 { config, pkgs, ... }:
-let 
-  secretImports = map (file: ./secrets/${file}) (builtins.attrNames (builtins.readDir ./secrets));
-in 
 {
-  imports = secretImports ++ [
-    
+  imports = [
+    ./secrets/default.nix
   ];
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
